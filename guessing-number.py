@@ -5,7 +5,7 @@
 import random
 
 # angka rahasia
-rahasia = random.randrange(1,100)
+rahasia = random.randint(1,100)
 
 # kesempatan
 K = 7
