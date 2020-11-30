@@ -16,9 +16,6 @@ while K > 0:
     print("------------------------sisa nyawa:",K)
     tebakan =int(input("tebak sebuah angka = "))
     
-    # kesempatan berkurang
-    K -= 1
-
     # pengondisian
     if tebakan == rahasia:
         print("\n\t Selamat..... anda berhasil menebak!")
@@ -29,12 +26,12 @@ while K > 0:
         print("angka terlalu tinggi!")
     elif tebakan < rahasia:
         print("angka terlalu rendah!")
+    
+    # kesempatan berkurang
+    K -= 1
 
 #jika loopnya selesai
 if K <= 0:
     print("\n\tAngka rahasianya adalah = ",rahasia)
     print("\tCoba lagi ya.... :D ")
-
-
-
 
