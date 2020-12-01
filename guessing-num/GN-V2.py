@@ -10,12 +10,13 @@ rahasia = random.randint(1,100)
 # kesempatan
 K = 7
 print("===========================================")
+print("Tebak lah suatu angka dari 1-100")
 print("kamu cuma punya",K,"kesempatan")
 print("gunakan sebaik-baiknya, tebak dengan tepat")
 print("--------------------------------------------")
 
 while K > 0:
-    # erorr handling
+    # error handling
     try:
         # user menginput suatu angka
         print("\n------------------------sisa nyawa:",K)
@@ -41,6 +42,12 @@ while K > 0:
     except ValueError:
         print("\n!!! Input kamu salah")
         print("!!! hanya boleh bilangan integer")
+    except KeyboardInterrupt: # ctl + c
+        keluar=input(" \n\napakah kamu mau keluar? (y/n) :")
+        print("sampai jumpa")
+        if keluar=='y':
+            break
+        
 
 #jika loopnya selesai
 if K <= 0:
