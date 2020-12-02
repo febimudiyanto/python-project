@@ -77,7 +77,10 @@ def rubah_kontak():
 
 
 while True:
-    
+    # clear console
+    print("\033[H\033[J") 
+
+
     print("============================================")
     print("Buku Kontak")
     print("--------------------------------------------")
