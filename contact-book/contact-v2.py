@@ -77,6 +77,7 @@ def rubah_kontak():
 
 
 while True:
+
     # clear console
     print("\033[H\033[J") 
 
@@ -116,6 +117,7 @@ while True:
 
 
 
+# simpan contact --> data-contact.txt
 
 file = open("data-contact.txt","w")
 file.write(str(contact))
