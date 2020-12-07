@@ -1,6 +1,7 @@
 import os
 from os import path
 
+
 # cek file 
 if path.exists("data-contact.txt"):
     file = open("data-contact.txt","r")
