@@ -51,7 +51,10 @@ def rubah_kontak():
 
 
 while True:
-    
+    # clear layar
+    print("\033[H\033[J")
+    print("\n\n\n")
+    print("\n\n\n")
     print("============================================")
     print("============================================")
     print("Buku Kontak")
