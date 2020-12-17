@@ -51,9 +51,9 @@ text = ",".join([
 
 
 print("-------------------------------")
-print("mengirim pesan via",source)
+print("emailmu :'",source,"'")
 # input password, getpass digunakan untuk menyembunyikan hasil ketikan
-pwd = getpass.getpass(prompt ="masukkan password :",stream=None)
+pwd = getpass.getpass(prompt ="masukkan password untuk'"+source+"' :",stream=None)
 
 # koneksi ke server / "smtp.gmail.com"
 server = smtplib.SMTP("smtp.gmail.com", 587)
@@ -67,6 +67,7 @@ except:
     print("login gagal")
 
 print("-------------------------------")
+
 try:
     server.sendmail(source,email,text)
     print("[sukses] email berhasil terkirim.....")
