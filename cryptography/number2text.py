@@ -1,12 +1,11 @@
-abjad = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+abjad = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-huruf = input("masukkan huruf :")
-number = int(input("masukkan number :")) - 1
-
-selisih = abjad.index(huruf) - number
+cp = list(map(str,input("masukkan chipertext :").strip().split()))
 print("-----------------------------------------")
-cp = list(map(int,input("masukkan chipertext : ").strip().split()))
 
-for i in cp:
-    print(abjad[cp[i]-selisih],end="")
-
+for i in range(len(cp)):
+    if cp[i].isnumeric():
+        print(abjad[i], end="")
+    else:
+        print(cp[i],end="")
+print("")
