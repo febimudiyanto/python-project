@@ -51,9 +51,9 @@ text = ",".join([
 
 
 print("-------------------------------")
-print("emailmu :'",source,"'")
+print("emailmu -> '",source,"'")
 # input password, getpass digunakan untuk menyembunyikan hasil ketikan
-pwd = getpass.getpass(prompt ="masukkan password untuk'"+source+"' :",stream=None)
+pwd = getpass.getpass(prompt ="masukkan password untuk '"+source+"' :",stream=None)
 
 # koneksi ke server / "smtp.gmail.com"
 server = smtplib.SMTP("smtp.gmail.com", 587)
