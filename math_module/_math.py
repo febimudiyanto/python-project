@@ -23,4 +23,6 @@ def cek_genap(angka):
   else:
     print('angka ganjil')
 
+def akar(x):
+    return x**(1/2)
 
