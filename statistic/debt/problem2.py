@@ -2,9 +2,10 @@ balance = float(input("balance = "))
 annualInterestRate = float(input("Interest Rate = "))
 
 
+# Paste your code into this box
 '''
 Problem Set 2
-( Problem 3 - Paying Debt off in a Year)
+( Problem 2 - Paying Debt off in a Year)
 
 balance = the outstanding balance on the credit card
 annualInterestRate = annual interest rate as a decimal
@@ -24,25 +25,17 @@ def cek_bulan(fixedMonthlyPayment,balance):
     while balance > 0 and bulan <= 12 :
         balance = (balance - fixedMonthlyPayment) * (monthlyInterestRate + 1)
         bulan += 1
-        
-    return bulan,balance
+    
+    return bulan <= 12
+
 
 
 monthlyInterestRate = (annualInterestRate)/12.0
 lowestMontlyPayment = 10
 
-while cek_bulan(lowestMontlyPayment,balance)[0] > 12:
+while not cek_bulan(lowestMontlyPayment,balance):
     lowestMontlyPayment += 10
 
-
-
-cek = lowestMontlyPayment
-lowestMontlyPayment -= 10
-while lowestMontlyPayment <= cek:
-    if cek_bulan(lowestMontlyPayment,balance)[0] == 12:
-        print("Lowest Payment:",round(lowestMontlyPayment,2))
-        break
-    lowestMontlyPayment += 0.01
-    
+print("Lowest Payment:",lowestMontlyPayment)
 
 
