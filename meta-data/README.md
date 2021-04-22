@@ -1,7 +1,23 @@
 ## Add Comment to Metadata
 
 
-instal terlebih dahulu pyexiv2
+how to use:
+
+write comment
+```
+python3 add_meta.py -w cat.jpg
+```
+
+read comment
+
+```
+python3 add_meta.py -r cat.jpg
+```
+
+
+
+
+install terlebih dahulu pyexiv2
 
 ```
 pip3 install pyexiv2
@@ -33,3 +49,11 @@ exiftool
 ```
 img.read_comment()
 ```
+
+
+
+
+next update:
+1. Encryption the comment
+2. Decryption the comment
+3. Add file into Image
