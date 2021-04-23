@@ -19,8 +19,11 @@ def organizeDir():
         filePath = Path(item)
         filetype = filePath.suffix.lower()
         directory = pickDir(filetype)
+        if directory == None:
+            continue
         directoryPath = Path(directory)
+        print(directoryPath)
         if directoryPath.is_dir() != True:
                 directoryPath.mkdir()
         filePath.rename(directoryPath.joinpath(filePath))
-organizeDir()
+
