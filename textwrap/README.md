@@ -1,4 +1,5 @@
 ## Wrap Text
+problem case [Text Wrap Hackerrank](https://www.hackerrank.com/challenges/text-wrap/problem)
 
 ### Strings Maniputation
 
@@ -22,3 +23,6 @@ UVWX
 YZ
 
 ```
+
+reference:
+[textwrap module](https://docs.python.org/3/library/textwrap.html)
