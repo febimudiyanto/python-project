@@ -1,7 +1,5 @@
-import pyperclip as clip
 import random
 from string import ascii_lowercase, ascii_uppercase, digits, punctuation
-from subprocess import check_call
 
 
 # params
@@ -16,7 +14,7 @@ AmbiguousChar = """{}[]()/\'"`~,;:.<>"""
 sameChar = ['i','I','l','1','o','O','0']
 autoCopy = True
 
-# preparation stringsDB
+# preparation stringsDB depend on params
 stringsCollect = ''
 if includeSym:
     stringsCollect += punctuation
@@ -37,19 +35,20 @@ if excludeAmbiguousChar:
 stringsDB = "".join(stringsCollect)
 
 
-# save random password in list
+# save random password in a list
 passwordStringsList = []
 
 while len(passwordStringsList) <= numberChar:
     generateDigit = random.choice(stringsDB)
     passwordStringsList.append(generateDigit)
-
+# join the passwordStringsList
 passwordStrings = "".join(passwordStringsList)
-try:
+
+# auto copy features
+if autoCopy:
+    import pyperclip as clip
     clip.copy(passwordStrings)
-except:
+    print(passwordStrings,'\t [copied]')
+else:
     print(passwordStrings)
-print(passwordStrings,'\t [copied]')
-
-
  
