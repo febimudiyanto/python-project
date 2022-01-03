@@ -32,7 +32,7 @@ if excludeAmbiguousChar:
         stringsCollect = stringsCollect.replace(AChar,'')
         
         
-stringsDB = "".join(stringsCollect)
+stringsDB = stringsCollect
 
 
 # save random password in a list
