@@ -34,16 +34,16 @@ def organizeDir():
                 
         filePath = Path(item)
         fileType = filePath.suffix.lower()
-        direcotry = pickDir(filetype)
+        directory = pickDir(fileType)
         
         #just skip, if the file extension not defined.
         if directory == None:
             continue
         
         directoryPath = Path(directory)
-        
         #make new directory if the category's directory not found.
         if directoryPath.is_dir() != True:
                 directoryPath.mkdir()
         filePath.rename(directoryPath.joinpath(filePath))
 
+organizeDir()
