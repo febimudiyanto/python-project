@@ -3,7 +3,7 @@ from pathlib import Path
 
 # define the file categories with dictionary
 SUBDIR = {
-        "01 DOCUMENTS":['.txt','.xls','.pdf','.docx'],
+        "01 DOCUMENTS":[".txt",".xls",".pdf",".docx"],
         "02 AUDIO":[".m4a",".mp3"],
         "03 VIDEO":['.mp4'],
         "04 IMAGES":[".jpg",".jpeg",".png",".svg"]
