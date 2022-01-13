@@ -1,4 +1,4 @@
-# matriks adjacent
+# Adjacent Matrix
 G = [[ 0, 1, 1, 0, 1, 0],
      [ 1, 0, 1, 1, 0, 1],
      [ 1, 1, 0, 1, 1, 0],
@@ -6,51 +6,53 @@ G = [[ 0, 1, 1, 0, 1, 0],
      [ 1, 0, 1, 0, 0, 1],
      [ 0, 1, 0, 1, 1, 0]]
 
-# hitung derajatnya
+
+
+# inisiate the name of node.
+node = "abcdef"
+t_={}
+for i in range(len(G)):
+  t_[node[i]] = i
+
+# count degree of all node.
 degree =[]
 for i in range(len(G)):
   degree.append(sum(G[i]))
 
-# nama titik berdasarkan matriks adjacent
-titik = "abcdef"
-t_={}
+# inisiate the posible color
+colorDict = {}
 for i in range(len(G)):
-  t_[titik[i]] = i
+  colorDict[node[i]]=["Blue","Red","Yellow","Green"]
 
 
-# inisialisasi warna yang memungkinkan
-warna = {}
-for i in range(len(G)):
-  warna[titik[i]]=["biru","merah","kuning","hijau"]
-
-
-# sort titik berdasarkan derajatnya
+# sort the node depends on the degree
 sorted_node=[]
 indeks = []
-#pakai selection sort
+
+# use selection sort
 for i in range(len(degree)):
   _max = 0
-  j=0
+  j = 0
   for j in range(len(degree)):
     if j not in indeks:
       if degree[j] > _max:
         _max = degree[j]
         idx = j
   indeks.append(idx)
-  sorted_node.append(titik[idx])
+  sorted_node.append(node[idx])
 
-
-
-node={}
+# The main process
+theSolution={}
 for n in sorted_node:
-  pil_warna = warna[n]
-  node[n] = pil_warna[0]
-  tetangga = G[t_[n]]
-  for j in range(len(tetangga)):
-    if tetangga[j]==1 and (pil_warna[0] in warna[titik[j]]):
-      warna[titik[j]].remove(pil_warna[0])
+  setTheColor = colorDict[n]
+  theSolution[n] = setTheColor[0]
+  adjacentNode = G[t_[n]]
+  for j in range(len(adjacentNode)):
+    if adjacentNode[j]==1 and (setTheColor[0] in colorDict[node[j]]):
+      colorDict[node[j]].remove(setTheColor[0])
 
 
-# cetak hasilnya
-for t,w in node.items():
-  print("titik",t," = ",w)
+# Print the solution
+for t,w in sorted(theSolution.items()):
+  print("Node",t," = ",w)
+
