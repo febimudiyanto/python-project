@@ -12,10 +12,11 @@ git clone <this repo>
 ```
 or setup the file
 
+```
 ├── app.py
 └── templates
     └── index.html
-
+```
 
 3. run the web app
 ```
