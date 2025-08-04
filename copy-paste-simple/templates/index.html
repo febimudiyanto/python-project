@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PastePad (Python)</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; }
+    textarea { width: 100%; height: 150px; font-family: monospace; margin-bottom: 1em; }
+    .snippet { border: 1px solid #ccc; background: #f4f4f4; padding: 1em; margin-bottom: 1em; position: relative; }
+    .copy-btn { position: absolute; top: 5px; right: 10px; }
+    pre { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>PastePad 📝 (Python Version)</h1>
+
+  <form method="POST">
+    <textarea name="content" placeholder="Paste your plain text here..." required></textarea><br>
+    <button type="submit">Add</button>
+  </form>
+
+  <hr>
+  <h2>Snippets</h2>
+  {% for s in snippets %}
+    <div class="snippet">
+      <button class="copy-btn" onclick="copyText({{ loop.index0 }})">Copy</button>
+      <pre id="snippet-{{ loop.index0 }}">{{ s }}</pre>
+    </div>
+  {% endfor %}
+
+<script>
+function copyText(index) {
+  const text = document.getElementById('snippet-' + index).textContent;
+
+  // Create temporary textarea
+  const tempInput = document.createElement("textarea");
+  tempInput.value = text;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+
+  alert("Copied!");
+}
+</script>
+</body>
+</html>
