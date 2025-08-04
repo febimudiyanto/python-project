@@ -17,5 +17,5 @@ python3 app.py
 
 ## Access the web page
 
-http://<ip address>:5000/
+http://{ip address}:5000/
 
